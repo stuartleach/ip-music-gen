@@ -164,13 +164,13 @@ function App() {
             <header className="App-header">
                 <h1>Random Music Generator</h1>
                 <h2>Based on your IP address: {
-
-                    ipAddress.split('').map((digit: string, index: number) => {
-                        return (
-                            <span key={index}
-                                  style={{color: currentlyPlayingNote === index ? "gray" : "gray"}}>{digit}</span>
-                        )
-                    })
+                    <div style={{background: isPlaying === true ? "none" : "none", borderRadius: "50px"}}>{
+                        ipAddress.split('').map((digit: string, index: number) => {
+                            return (
+                                <span key={index}
+                                      style={{color: currentlyPlayingNote === index ? "gray" : "gray"}}>{digit}</span>
+                            )
+                        })}</div>
                 }</h2>
                 <p>Click the play button to generate a random sequence of notes.
                     <br/>The scale is determined by the digits in your IP address.</p>
